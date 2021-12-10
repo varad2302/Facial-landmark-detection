@@ -3,6 +3,7 @@ import torch.nn.functional as F
 import pretrainedmodels
 
 
+'''
 # For grayscale images
 class FaceKeypointModel(nn.Module):
     def __init__(self):
@@ -27,7 +28,7 @@ class FaceKeypointModel(nn.Module):
         out = self.fc1(x)
 
         return out
-
+'''
 
 # For RGB images
 class FaceKeypointResNet50(nn.Module):
