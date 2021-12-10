@@ -67,3 +67,6 @@ val_loader = DataLoader(val_data,
                           shuffle=False)
 print(f"Training sample instances: {len(train_data)}")
 print(f"Validation sample instances: {len(val_data)}")
+
+if config.SHOW_DATASET_PLOT:
+    utils.dataset_keypoints_plot(valid_data)
