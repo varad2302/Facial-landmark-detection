@@ -3,11 +3,8 @@ import numpy as np
 import config
 
 
+# Visualize predicted keypoints
 def valid_keypoints_plot(image, outputs, orig_keypoints, epoch):
-    """
-    This function plots the regressed (predicted) keypoints and the actual 
-    keypoints after each validation epoch for one image in the batch.
-    """
     # detach the image, keypoints, and output tensors from GPU to CPU
     image = image.detach().cpu()
     outputs = outputs.detach().cpu().numpy()
@@ -28,15 +25,9 @@ def valid_keypoints_plot(image, outputs, orig_keypoints, epoch):
     plt.savefig(f"{config.OUTPUT_PATH}/val_epoch_{epoch}.png")
     plt.close()
     
-    
+
+# Visualize keypoints in the dataset
 def dataset_keypoints_plot(data):
-    """
-    This function shows the image faces and keypoint plots that the model
-    will actually see. This is a good way to validate that our dataset is in
-    fact corrent and the faces align wiht the keypoint features. The plot 
-    will be show just before training starts. Press `q` to quit the plot and
-    start training.
-    """
     plt.figure(figsize=(10, 10))
     for i in range(9):
         sample = data[i]
